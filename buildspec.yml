@@ -7,7 +7,6 @@ phases:
       - aws --version
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 096664318411.dkr.ecr.ap-south-1.amazonaws.com
       - REPOSITORY_URI=096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | CUT -C 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
