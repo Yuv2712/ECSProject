@@ -14,12 +14,12 @@ phases:
       - docker build -t noderepo .
       - echo Tagging the Docker image...
       - docker tag noderepo:latest 096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo:latest
-      - echo Generating imagedefinitions.json...
-      - echo '[{"name": "noderepo", "imageUri": "096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo:latest"}]' > imagedefinitions.json
   post_build:
     commands:
       - echo Pushing the Docker image to Amazon ECR...
       - docker push 096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo:latest
+      - echo Writing image definitions file...
+      - printf '[{"name":"noderepo","imageUri":"%s"}]' $noderepo:latest 096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo:latest > imagedefinitions.json
 artifacts:
   files:
     - imagedefinitions.json
