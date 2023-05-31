@@ -16,6 +16,7 @@ phases:
     commands:
       - docker tag noderepo:latest 096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo:latest
       - docker push 096664318411.dkr.ecr.ap-south-1.amazonaws.com/noderepo:latest
+      - aws s3 cp imagedefinitions.json s3://codepipeline-ap-south-1-813010075210/AppNode/BuildArtif/eEdyEXv/imagedefinitions.json
 
 artifacts:
   files:
