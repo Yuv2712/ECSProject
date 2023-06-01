@@ -10,7 +10,7 @@ app.get("/home", (req, res) => {
   res.send("Home Page");
 });
 
-app.get("/docker", (req, res) => {
+app.get("/dockers", (req, res) => {
   res.send("Docker Running");
 });
 
