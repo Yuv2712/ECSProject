@@ -8,7 +8,8 @@ app.get("/", (req, res) => {
   let b = process.env.DB_USER;
   c.push(a);
   c.push(b);
-  res.send("Welcome to Node APP Project",c);
+  res.send(c);
+  res.send("Welcome to Node APP Project");
 });
 
 app.get("/home", (req, res) => {
