@@ -3,11 +3,12 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
+  let c = [];
   let a = process.env.APP_PORT;
   let b = process.env.DB_USER;
-  res.send(a);
-  res.send(b);
-  res.send("Welcome to Node APP Project");
+  c.push(a);
+  c.push(b);
+  res.send("Welcome to Node APP Project",c);
 });
 
 app.get("/home", (req, res) => {
