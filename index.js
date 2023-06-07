@@ -3,7 +3,8 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("process.env.APP_ENV");
+  let a = process.env.APP_PORT;
+  res.send(a);
   res.send("Welcome to Node APP Project");
 });
 
