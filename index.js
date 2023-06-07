@@ -4,12 +4,9 @@ const app = express();
 
 app.get("/", (req, res) => {
   let c = [];
-  let a = process.env.APP_PORT;
-  let b = process.env.DB_USER;
-  c.push(a);
-  c.push(b);
+  c.push(process.env.APP_PORT,process.env.DB_USER);
   res.send(c);
-  res.send("Welcome to Node APP Project");
+
 });
 
 app.get("/home", (req, res) => {
